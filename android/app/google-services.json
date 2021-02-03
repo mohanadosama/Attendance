@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045874381341",
+    "project_id": "hadarni-8e959",
+    "storage_bucket": "hadarni-8e959.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045874381341:android:a2801b78cf35bde617acf4",
+        "android_client_info": {
+          "package_name": "com.example.ui_design"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045874381341-6k9ocu7gg06qdnic4incni5iun54tsgl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOrZXlD0utJ0R-nWdyrWuBna__9WkK4DU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045874381341-6k9ocu7gg06qdnic4incni5iun54tsgl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
