@@ -20,9 +20,9 @@ class Users {
     return Users(
 
       userId: doc['id'],
-      Name: doc['docName'],
-      attTime: doc['expert'],
-      attDate: doc['email'],
+      Name: doc['Name'],
+      attTime: doc['Time'],
+      attDate: doc['Date'],
       profilePictureURL: doc['photoURL'],
 
     );

@@ -54,7 +54,7 @@ class _attLog extends State<attLog> {
                         '${doc.data}', //Date
                         style: TextStyle(
                             fontSize: 14,
-                            color: Colors.teal[400],
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -64,7 +64,7 @@ class _attLog extends State<attLog> {
                         'At: ${doc.data}', //Time
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.teal[400],
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     ),

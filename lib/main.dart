@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_design/ui/Home.dart';
 import 'package:ui_design/ui/attLog.dart';
 import 'package:ui_design/ui/attSubmit.dart';
+import 'package:ui_design/ui/forgotPassword.dart';
 import 'package:ui_design/ui/login.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -24,9 +25,9 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/': (context) => Login(),
+          '/forgot': (context) => forgot(),
           '/Home': (context) => Home(),
           '/attLog': (context) => attLog(),
-          '/attSubmit': (context) => attSubmit(),
         });
   }
 }

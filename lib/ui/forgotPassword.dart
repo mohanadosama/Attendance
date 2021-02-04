@@ -4,36 +4,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:another_flushbar/flushbar.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:ui_design/models/users.dart';
 import 'package:ui_design/widgets/loading.dart';
 import 'package:ui_design/utils/auth.dart';
 import 'package:ui_design/utils/validator.dart';
 
-Users currentUser;
-final CollectionReference usersRef = FirebaseFirestore.instance.collection('Users');
-final CollectionReference attRef = FirebaseFirestore.instance.collection('att');
-
-class Login extends StatefulWidget {
+class forgot extends StatefulWidget {
   final currentUser;
 
-  Login({this.currentUser});
+  forgot({this.currentUser});
 
-  _Login createState() => _Login();
+  _forgot createState() => _forgot();
 }
 
-class _Login extends State<Login> {
+class _forgot extends State<forgot> {
 
   final formKey = GlobalKey<FormState>();
   final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
 
-  bool _autoValidate = false;
   bool _loadingVisible = false;
 
   String email;
-  String password;
 
   void Submit() async {
     final form = formKey.currentState;
@@ -61,7 +52,7 @@ class _Login extends State<Login> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "تسجيل الدخول",
+            "نسيت كلمة المرور",
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
         ],
@@ -78,7 +69,7 @@ class _Login extends State<Login> {
           validator: Validator.validateEmail,
           decoration: InputDecoration(
             border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
             labelText: "البريد الإلكتروني",
             prefixIcon: Padding(
               padding: EdgeInsets.only(left: 5.0),
@@ -92,69 +83,28 @@ class _Login extends State<Login> {
           ),
         ));
 
-    final password = Directionality(
-        textDirection: TextDirection.rtl,
-        child: TextFormField(
-          textAlign: TextAlign.right,
-          autofocus: false,
-          obscureText: true,
-          controller: _password,
-          validator: Validator.validatePassword,
-          decoration: InputDecoration(
-            labelText: "كلمة المرور",
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(left: 5.0),
-              child: Icon(
-                Icons.lock,
-                color: Theme.of(context).primaryColor,
-              ), // icon is 48px widget.
-            ), // icon is 48px widget.
-            hintText: 'كلمة المرور',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
-          ),
-        ));
 
-    final login = Container(
+    final frgtPwd = Container(
       padding: EdgeInsets.only(top: 35),
       child: ButtonTheme(
         minWidth: 220.0,
         height: 55.0,
         child: RaisedButton(
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(10.0)),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
             color: Theme.of(context).primaryColor,
             child: Text(
-              "تسجيل الدخول",
+              "كلمة سر جديدة!",
               style: TextStyle(fontSize: 23, color: Colors.white),
             ),
             onPressed: () {
-              _emailLogin(
+              _forgotPwd(
                   email: _email.text,
-                  password: _password.text,
                   context: context);
             }),
       ),
     );
 
-    final forgot = ButtonTheme(
-        minWidth: 10.0,
-        height: 10.0,
-        child: FlatButton(
-            child: Text(
-              "نسيت كلمة السر ؟",
-              style: TextStyle(
-                fontSize: 18,
-                decoration: TextDecoration.underline,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            color: Colors.transparent,
-            disabledColor: Colors.transparent,
-            onPressed: () {
-              Navigator.pushNamed(context, '/forgot');
-            }));
 
     return Scaffold(
       bottomNavigationBar: Column(
@@ -180,13 +130,8 @@ class _Login extends State<Login> {
                         SizedBox(
                           height: 24,
                         ),
-                        password,
-                        SizedBox(
-                          height: 12,
-                        ),
                         //LoginButton
-                        login,
-                        forgot,
+                        frgtPwd,
                       ],
                     ),
                   ),
@@ -202,14 +147,14 @@ class _Login extends State<Login> {
     });
   }
 
-  void _emailLogin(
+  void _forgotPwd (
       {String email, String password, BuildContext context}) async {
     if (formKey.currentState.validate()) {
       try {
         SystemChannels.textInput.invokeMethod('TextInput.hide');
         await _changeLoadingVisible();
         //need await so it has chance to go through error if found.
-        await Auth.signIn(email, password)
+        await Auth.forgotPasswordEmail(email)
             .then((uid) => Navigator.of(context).pop());
         Navigator.pushNamed(context, '/Home');
       } catch (e) {
@@ -222,8 +167,6 @@ class _Login extends State<Login> {
           duration: Duration(seconds: 5),
         ).show(context);
       }
-    } else {
-      setState(() => _autoValidate = true);
     }
   }
 }
