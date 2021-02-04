@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/': (context) => Login(),
-          '/home': (context) => Home(),
+          '/Home': (context) => Home(),
           '/attLog': (context) => attLog(),
           '/attSubmit': (context) => attSubmit(),
         });

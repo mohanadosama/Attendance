@@ -30,18 +30,18 @@ class _attSubmit extends State<attSubmit> {
         child: Stack(
           children: <Widget>[
             Container(
-              // child: Column(
-              //   children: [
-              //     Text(
-              //       'الساعةالآن',
-              //       style: TextStyle(fontSize: 12, color: Colors.black12),
-              //     ),
-              //     Text(
-              //       '12:03',
-              //       style: TextStyle(fontSize: 16, color: Colors.black12),
-              //     ),
-              //   ],
-              // ),
+              child: Column(
+                children: [
+                  Text(
+                    'الساعةالآن',
+                    style: TextStyle(fontSize: 12, color: Colors.black12),
+                  ),
+                  Text(
+                    '12:03',
+                    style: TextStyle(fontSize: 16, color: Colors.black12),
+                  ),
+                ],
+              ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
               ),
@@ -55,14 +55,14 @@ class _attSubmit extends State<attSubmit> {
                     color: Theme.of(context).primaryColor,
                     shape: BoxShape.circle,
                   ),
-                  // child: Column(
-                  //   children: [
-                  //     Icon(
-                  //       Icons.camera_alt,
-                  //       color: Colors.white,
-                  //     ),
-                  //   ],
-                  // ),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.camera_alt,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

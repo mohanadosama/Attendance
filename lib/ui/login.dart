@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:another_flushbar/flushbar.dart';
 
 import 'package:ui_design/widgets/loading.dart';
 import 'package:ui_design/utils/auth.dart';
@@ -18,9 +19,9 @@ class Login extends StatefulWidget {
 
 class _Login extends State<Login> {
 
-  final formKey = new GlobalKey<FormState>();
-  final TextEditingController _email = new TextEditingController();
-  final TextEditingController _password = new TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   bool _autoValidate = false;
   bool _loadingVisible = false;
@@ -209,6 +210,11 @@ class _Login extends State<Login> {
         _changeLoadingVisible();
         print("Sign In Error: $e");
         String exception = Auth.getExceptionText(e);
+        Flushbar(
+          title: "Login Error",
+          message: exception,
+          duration: Duration(seconds: 5),
+        ).show(context);
       }
     } else {
       setState(() => _autoValidate = true);
