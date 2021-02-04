@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1045874381341",
-    "project_id": "hadarni-8e959",
-    "storage_bucket": "hadarni-8e959.appspot.com"
+    "project_number": "753417242583",
+    "project_id": "attendance-c47aa",
+    "storage_bucket": "attendance-c47aa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1045874381341:android:a2801b78cf35bde617acf4",
+        "mobilesdk_app_id": "1:753417242583:android:7215c80bef6d5ec6c7ad92",
         "android_client_info": {
-          "package_name": "com.example.ui_design"
+          "package_name": "com.Nada.Attendance"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1045874381341-6k9ocu7gg06qdnic4incni5iun54tsgl.apps.googleusercontent.com",
+          "client_id": "753417242583-gj8mnb741e8vv5c24pr03qeff3ndq7gn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAOrZXlD0utJ0R-nWdyrWuBna__9WkK4DU"
+          "current_key": "AIzaSyBN2aae3fHaDRav3TRyOamMjcJ8i4v589E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1045874381341-6k9ocu7gg06qdnic4incni5iun54tsgl.apps.googleusercontent.com",
+              "client_id": "753417242583-gj8mnb741e8vv5c24pr03qeff3ndq7gn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

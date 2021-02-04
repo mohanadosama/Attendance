@@ -39,6 +39,8 @@ dev_dependencies:
   path_provider:
   cached_network_image:
   geolocator:
+  another_flushbar:
+  intl:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

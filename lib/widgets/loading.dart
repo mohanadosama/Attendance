@@ -37,11 +37,10 @@ class LoadingScreen extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   shape: BoxShape.circle,
                 ),
-                //need this due to bug...https://github.com/flutter/flutter/issues/18399
                 child: Align(
                   alignment: Alignment.center,
                   child: SizedBox(
-                    child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.tealAccent)),
+                    child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.deepOrangeAccent)),
                     height: 30.0,
                     width: 30.0,
                   ),
@@ -68,14 +67,13 @@ class LoadingScreen extends StatelessWidget {
   }
 }
 
-
 Container circularLoading ()
 {
   return Container(
     alignment: Alignment.center,
     padding: EdgeInsets.only(top: 10),
     child: CircularProgressIndicator(
-      valueColor: AlwaysStoppedAnimation(Colors.teal[100]),
+      valueColor: AlwaysStoppedAnimation(Colors.deepOrange[100]),
     ),
   );
 }
