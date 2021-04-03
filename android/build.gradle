@@ -1,4 +1,4 @@
-buildscript {
+nabuildscript {
     ext.kotlin_version = '1.4.30'
     repositories {
         google()
